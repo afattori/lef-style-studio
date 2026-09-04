@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, Phone, Clock } from "lucide-react";
-import logo from "@/assets/lef-logo.png.asset.json";
+import { Logo } from "@/components/site/Logo";
 
 const orari = [
   ["Lunedì", "Chiuso"],
@@ -18,14 +18,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <img
-              src={logo.url}
-              alt="Logo Lef Parrucchieri"
-              className="h-12 w-auto rounded-md"
-              width={439}
-              height={139}
-              loading="lazy"
-            />
+            <Logo size={52} />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/70">
               Salone di parrucchieri a Senigallia. Colore, piega e cura della cute con Luisa e Federica.
             </p>
