@@ -57,7 +57,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="tel:+390716043 5"
+            href="tel:+3907160435"
             className="hidden text-sm text-cream/70 transition-colors hover:text-cream xl:inline"
           >
             071 60435
