@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CookieRouteImport } from './routes/cookie'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TerminiRouteImport } from './routes/termini'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookieRoute = CookieRouteImport.update({
+  id: '/cookie',
+  path: '/cookie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerminiRoute = TerminiRouteImport.update({
+  id: '/termini',
+  path: '/termini',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cookie': typeof CookieRoute
+  '/privacy': typeof PrivacyRoute
+  '/termini': typeof TerminiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cookie': typeof CookieRoute
+  '/privacy': typeof PrivacyRoute
+  '/termini': typeof TerminiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cookie': typeof CookieRoute
+  '/privacy': typeof PrivacyRoute
+  '/termini': typeof TerminiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/cookie' | '/privacy' | '/termini'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/cookie' | '/privacy' | '/termini'
+  id: '__root__' | '/' | '/cookie' | '/privacy' | '/termini'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CookieRoute: typeof CookieRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TerminiRoute: typeof TerminiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookie': {
+      id: '/cookie'
+      path: '/cookie'
+      fullPath: '/cookie'
+      preLoaderRoute: typeof CookieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termini': {
+      id: '/termini'
+      path: '/termini'
+      fullPath: '/termini'
+      preLoaderRoute: typeof TerminiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CookieRoute: CookieRoute,
+  PrivacyRoute: PrivacyRoute,
+  TerminiRoute: TerminiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
