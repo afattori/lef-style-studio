@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/lef-logo.png.asset.json";
+import { Logo } from "@/components/site/Logo";
 
 const links = [
   { href: "/#servizi", label: "Servizi" },
@@ -37,13 +37,7 @@ export function Header() {
     >
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 lg:px-8">
         <Link to="/" className="flex min-w-0 items-center" aria-label="Lef Parrucchieri, torna alla home">
-          <img
-            src={logo.url}
-            alt="Logo Lef Parrucchieri, Senigallia"
-            className="h-9 w-auto shrink-0 rounded-md sm:h-11"
-            width={439}
-            height={139}
-          />
+          <Logo size={40} className="shrink-0" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigazione principale">

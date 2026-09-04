@@ -258,6 +258,15 @@ function Home() {
                     Guarda i servizi
                   </a>
                 </div>
+                <a
+                  href="https://www.instagram.com/lefparrucchieri/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-5 inline-flex items-center gap-2 text-sm text-cream/70 transition-colors hover:text-cream"
+                >
+                  <Instagram className="h-4 w-4" aria-hidden="true" />
+                  Guarda i nostri lavori su Instagram — @lefparrucchieri
+                </a>
               </Reveal>
 
               <Reveal delay={320}>
