@@ -6,17 +6,19 @@ type LogoProps = {
 
 /**
  * Logo Lef Parrucchieri ricostruito in codice (nessuna immagine):
- * targa magenta, monogramma "L & F" corsivo e wordmark "PARRUCCHIERI".
+ * scritta bianca con contorno rosa, senza sfondo.
  */
 export function Logo({ className = "", size = 44 }: LogoProps) {
+  const stroke = Math.max(1, size * 0.022);
   return (
     <span
-      className={`inline-flex select-none flex-col items-center justify-center rounded-md bg-primary text-primary-foreground ${className}`}
+      className={`inline-flex select-none flex-col items-center justify-center text-cream ${className}`}
       style={{
         height: size,
-        paddingInline: size * 0.34,
-        paddingBlock: size * 0.14,
         lineHeight: 1,
+        WebkitTextStrokeWidth: `${stroke}px`,
+        WebkitTextStrokeColor: "var(--primary)",
+        paintOrder: "stroke fill",
       }}
       role="img"
       aria-label="Lef Parrucchieri"
@@ -24,20 +26,20 @@ export function Logo({ className = "", size = 44 }: LogoProps) {
       <span
         style={{
           fontFamily: '"Parisienne", "Cormorant Garamond", cursive',
-          fontSize: size * 0.42,
-          lineHeight: 1,
+          fontSize: size * 0.52,
+          lineHeight: 1.1,
         }}
       >
-        L<span style={{ padding: `0 ${size * 0.03}px`, fontSize: size * 0.3 }}>&amp;</span>F
+        L<span style={{ padding: `0 ${size * 0.03}px`, fontSize: size * 0.36 }}>&amp;</span>F
       </span>
       <span
         style={{
-          fontFamily: 'var(--font-sans)',
+          fontFamily: "var(--font-sans)",
           fontWeight: 600,
-          fontSize: size * 0.2,
-          letterSpacing: size * 0.032,
-          marginTop: size * 0.08,
-          marginRight: -size * 0.032,
+          fontSize: size * 0.21,
+          letterSpacing: size * 0.034,
+          marginTop: size * 0.04,
+          marginRight: -size * 0.034,
         }}
       >
         PARRUCCHIERI
