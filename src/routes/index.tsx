@@ -22,8 +22,8 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
 import { ContactForm } from "@/components/site/ContactForm";
-import heroImg from "@/assets/lef-biondo.jpg.asset.json";
-import castanoImg from "@/assets/lef-castano.jpg.asset.json";
+import heroImg from "@/assets/lef-biondo.png";
+import castanoImg from "@/assets/lef-castano.png";
 
 const TITLE = "Lef Parrucchieri Senigallia | Colore, piega e cura dei capelli";
 const DESCRIPTION =
@@ -290,7 +290,7 @@ function Home() {
             <Reveal delay={200} className="relative">
               <div className="relative mx-auto max-w-sm lg:max-w-none">
                 <img
-                  src={heroImg.url}
+                  src={heroImg}
                   alt="Capelli lunghi biondo caldo con schiariture realizzate nel salone Lef Parrucchieri"
                   className="w-full rounded-[2rem] object-cover shadow-[var(--shadow-glow)]"
                   width={456}
@@ -342,7 +342,7 @@ function Home() {
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
             <Reveal>
               <img
-                src={castanoImg.url}
+                src={castanoImg}
                 alt="Capelli castani lunghi con onde morbide realizzati da Lef Parrucchieri a Senigallia"
                 className="w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]"
                 width={456}
